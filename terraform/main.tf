@@ -29,7 +29,7 @@ data "aws_availability_zones" "zones" {}
 
 
 module "network" {
-  source = "git@github.com:hellupline/cloud.git//terraform/modules/network/_examples/vpc-3az"
+  source = "git@github.com:hellupline/cloud-stuffs.git//terraform/modules/network/_examples/vpc-3az"
 
   name                 = local.network_name
   vpc_cidr             = local.network_cidr
