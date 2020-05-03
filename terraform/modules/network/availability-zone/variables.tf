@@ -5,7 +5,7 @@ variable "name" {
 
 variable "vpc_id" {
   description = "ID of VPC to attach resources"
-  tpe         = string
+  type        = string
 }
 
 variable "availability_zone" {
@@ -36,7 +36,7 @@ variable "public_network_tags" {
   default     = {}
 }
 
-variable "public route_table_tags" {
+variable "public_route_table_tags" {
   description = "Additional tags for the public route tables"
   type        = map(string)
   default     = {}
@@ -68,7 +68,7 @@ variable "private_network_tags" {
   default     = {}
 }
 
-variable "private route_table_tags" {
+variable "private_route_table_tags" {
   description = "Additional tags for the private route tables"
   type        = map(string)
   default     = {}

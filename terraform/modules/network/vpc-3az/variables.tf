@@ -29,17 +29,17 @@ variable "enable_dns_hostnames" {
 variable "availability_zones" {
   description = "A List of 3 availability zone module configurations"
   type = list(object({
-    availability_zone_name = string
-    public_cidr_block = string
-    private_cidr_block = string
-    public_network_tags = map
-    public_route_table_tags = map
-    public_subnet_tags = map
-    nat_gateway_tags = map
-    nat_eip_tags = map
-    private_network_tags = map
-    private_route_table_tags = map
-    private_subnet_tags = map
+    availability_zone_name   = string
+    public_cidr_block        = string
+    private_cidr_block       = string
+    public_network_tags      = map(string)
+    public_route_table_tags  = map(string)
+    public_subnet_tags       = map(string)
+    nat_gateway_tags         = map(string)
+    nat_eip_tags             = map(string)
+    private_network_tags     = map(string)
+    private_route_table_tags = map(string)
+    private_subnet_tags      = map(string)
   }))
 }
 

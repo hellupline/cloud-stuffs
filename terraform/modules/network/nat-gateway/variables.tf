@@ -5,7 +5,7 @@ variable "name" {
 
 variable "subnet_id" {
   description = "ID of Subnet to attach resources"
-  tpe         = string
+  type        = string
 }
 
 variable "availability_zone" {

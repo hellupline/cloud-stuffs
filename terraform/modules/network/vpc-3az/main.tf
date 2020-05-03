@@ -1,5 +1,5 @@
 module "availability_zone_0" {
-  source = "../../availability-zone"
+  source = "../availability-zone"
 
   name   = var.name
   vpc_id = module.vpc.vpc_id
@@ -22,7 +22,7 @@ module "availability_zone_0" {
 
 
 module "availability_zone_1" {
-  source = "../../availability-zone"
+  source = "../availability-zone"
 
   name   = var.name
   vpc_id = module.vpc.vpc_id
@@ -45,7 +45,7 @@ module "availability_zone_1" {
 
 
 module "availability_zone_2" {
-  source = "../../availability-zone"
+  source = "../availability-zone"
 
   name   = var.name
   vpc_id = module.vpc.vpc_id
@@ -68,7 +68,7 @@ module "availability_zone_2" {
 
 
 module "vpc" {
-  source = "../../vpc"
+  source = "../vpc"
 
   name = var.name
   cidr = var.vpc_cidr

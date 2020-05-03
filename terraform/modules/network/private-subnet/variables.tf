@@ -5,12 +5,12 @@ variable "name" {
 
 variable "vpc_id" {
   description = "ID of VPC to attach resources"
-  tpe         = string
+  type        = string
 }
 
 variable "natgw_id" {
   description = "ID of nat gateway to attach route"
-  tpe         = string
+  type        = string
 }
 
 variable "availability_zone" {
