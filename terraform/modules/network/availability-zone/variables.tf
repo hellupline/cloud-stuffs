@@ -8,6 +8,11 @@ variable "vpc_id" {
   type        = string
 }
 
+variable "igw_id" {
+  description = "ID of internet gateway to attach public routes"
+  type        = string
+}
+
 variable "availability_zone" {
   description = "A availability zone name or id in the region"
   type        = string

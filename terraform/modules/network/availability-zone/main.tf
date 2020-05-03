@@ -1,5 +1,6 @@
 module "public_subnet" {
-  source = "../public-subnet"
+  source    = "../public-subnet"
+  providers = { aws = aws }
 
   name              = var.name
   vpc_id            = var.vpc_id
@@ -14,7 +15,8 @@ module "public_subnet" {
 
 
 module "nat_gateway" {
-  source = "../nat-gateway"
+  source    = "../nat-gateway"
+  providers = { aws = aws }
 
   name              = var.name
   subnet_id         = module.public_subnet.subnet_id
@@ -27,11 +29,12 @@ module "nat_gateway" {
 
 
 module "private_subnet" {
-  source = "../private-subnet"
+  source    = "../private-subnet"
+  providers = { aws = aws }
 
   name              = var.name
   vpc_id            = var.vpc_id
-  natgw             = module.nat_gateway.natgw_id
+  natgw_id          = module.nat_gateway.natgw_id
   availability_zone = var.availability_zone
   cidr_block        = var.private_cidr_block
 

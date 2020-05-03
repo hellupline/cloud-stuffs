@@ -41,7 +41,7 @@ output "private_route_table_id" {
   value       = module.private_subnet.route_table_id
 }
 
-output "private_subnet" {
+output "private_subnet_id" {
   description = "ID of private subnet"
   value       = module.private_subnet.subnet_id
 }

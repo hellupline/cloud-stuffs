@@ -3,13 +3,13 @@ variable "name" {
   type        = string
 }
 
-variable "subnet_id" {
-  description = "ID of Subnet to attach resources"
+variable "availability_zone" {
+  description = "A availability zone name or id in the region"
   type        = string
 }
 
-variable "availability_zone" {
-  description = "A availability zone name or id in the region"
+variable "subnet_id" {
+  description = "ID of Subnet to attach resources"
   type        = string
 }
 

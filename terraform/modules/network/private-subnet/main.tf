@@ -1,12 +1,12 @@
 resource "aws_route_table" "this" {
   vpc_id = var.vpc_id
 
-  tags = merge(var.tags, var.route_table_tags, { Name = "${var.name} : (${var.availability_zone}) :  private" })
+  tags = merge(var.tags, var.route_table_tags, { Name = "${var.name} : ${var.availability_zone} : private" })
 }
 
 resource "aws_route" "this" {
   route_table_id         = aws_route_table.this.id
-  nat_gateway_id         = var.nat_gateway_id
+  nat_gateway_id         = var.natgw_id
   destination_cidr_block = "0.0.0.0/0"
 }
 
@@ -21,5 +21,5 @@ resource "aws_subnet" "this" {
   cidr_block              = var.cidr_block
   map_public_ip_on_launch = false
 
-  tags = merge(var.tags, var.subnet_tags, { Name = "${var.name} : (${var.availability_zone}) : private" })
+  tags = merge(var.tags, var.subnet_tags, { Name = "${var.name} : ${var.availability_zone} : private" })
 }

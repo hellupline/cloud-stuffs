@@ -20,11 +20,11 @@ variable "enable_dns_hostnames" {
   default     = true
 }
 
-# variable "enable_flow_log" {
-#   description = "Whether or not to enable VPC Flow Logs"
-#   type        = bool
-#   default     = false
-# }
+variable "enable_flow_log" {
+  description = "Whether or not to enable VPC Flow Logs"
+  type        = bool
+  default     = false
+}
 
 variable "availability_zones" {
   description = "A List of 3 availability zone module configurations"
@@ -32,6 +32,7 @@ variable "availability_zones" {
     availability_zone_name   = string
     public_cidr_block        = string
     private_cidr_block       = string
+    tags                     = map(string)
     public_network_tags      = map(string)
     public_route_table_tags  = map(string)
     public_subnet_tags       = map(string)

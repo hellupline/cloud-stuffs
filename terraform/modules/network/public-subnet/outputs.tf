@@ -1,6 +1,6 @@
 output "route_table_id" {
   description = "ID of route table"
-  value       = aws_route_table.public.id
+  value       = aws_route_table.this.id
 }
 
 output "subnet_id" {
